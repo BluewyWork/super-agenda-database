@@ -1,1 +1,22 @@
+Task/Event {
+    id: ...
+    title: String?
+    description: String?
+    startDateTime: DateTime?
+    endDateTime: DateTime?
+    status: Status
+    tags: String
+    -> remind: Boolean
+    -> remind_at: Integer
+}
 
+enum Status {
+    NotStarted, Started, Completed
+}
+
+User {
+    id: ...
+    username: String
+    email: String
+    password: String
+}
