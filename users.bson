@@ -1,0 +1,17 @@
+{
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'username',
+      'hashed_password'
+    ],
+    properties: {
+      username: {
+        bsonType: 'string'
+      },
+      hashed_password: {
+        bsonType: 'string'
+      }
+    }
+  }
+}
