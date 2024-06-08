@@ -1,52 +1,48 @@
 {
-  "_id": {
-    "$oid": "662a98cf86b0c9743120bf5a"
-  },
-  "owner": {
-    "$oid": "6622b619c23a20b74fee6c57"
-  },
-  "task_list": [
-    {
-      "_id": {
-        "$oid": "664a24c3646fe8b9a22c1db9"
+  $jsonSchema: {
+    bsonType: 'object',
+    required: [
+      'owner',
+      'task_list'
+    ],
+    properties: {
+      owner: {
+        bsonType: 'objectId'
       },
-      "title": "New Title 2 ",
-      "description": "This is a new description.",
-      "status": "Ongoing",
-      "start_date_time": {
-        "$date": "2024-05-30T16:11:47.694Z"
-      },
-      "end_date_time": {
-        "$date": "2024-05-31T12:30:47.694Z"
-      }
-    },
-    {
-      "_id": {
-        "$oid": "664f872dc758bc2c208b872d"
-      },
-      "title": "KoN",
-      "description": "Description chula.E",
-      "status": "NotStarted",
-      "start_date_time": {
-        "$date": "2024-05-23T20:12:49.267Z"
-      },
-      "end_date_time": {
-        "$date": "2024-05-23T20:12:49.267Z"
-      }
-    },
-    {
-      "_id": {
-        "$oid": "665ced6e3b263f6dd04cf9b2"
-      },
-      "title": "Titulo Magico",
-      "description": "Esto es una descripcion magico.",
-      "status": "Completed",
-      "start_date_time": {
-        "$date": "2024-06-03T00:07:57.032Z"
-      },
-      "end_date_time": {
-        "$date": "2024-06-03T00:07:57.032Z"
+      task_list: {
+        bsonType: 'array',
+        items: {
+          bsonType: 'object',
+          required: [
+            'title',
+            'description',
+            'status',
+            'start_date_time',
+            'end_date_time'
+          ],
+          properties: {
+            title: {
+              bsonType: 'string'
+            },
+            description: {
+              bsonType: 'string'
+            },
+            status: {
+              'enum': [
+                'NotStarted',
+                'Ongoing',
+                'Completed'
+              ]
+            },
+            start_date_time: {
+              bsonType: 'date'
+            },
+            end_date_time: {
+              bsonType: 'date'
+            }
+          }
+        }
       }
     }
-  ]
+  }
 }
